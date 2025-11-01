@@ -145,7 +145,7 @@ body {
 }
 
 .edit-btn:hover {
-    transform: rotate(15deg) scale(1.1);
+    transform: scale(1.1);
 }
 
 /* SETTINGS SECTIONS */
