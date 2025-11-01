@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Sirin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="settings-header">
+        <a href="index.html" class="back-btn">
+            <i class='bx bx-chevron-left'></i>
+            <span>Back</span>
+        </a>
+        <h1>Settings</h1>
+        <div class="header-space"></div>
+    </header>
+
+    <!-- Main Settings Container -->
+    <main class="settings-container">
+        
+        <!-- User Profile Section -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%2Fid%2FOIP.hGSCbXlcOjL_9mmzerqAbQHaHa%3Fpid%3DApi&f=1&ipt=8854e8782b9540b124010dc64675e82a53242ad6011c22004b683ecd0b89035b&ipo=images" 
+                     alt="Profile" class="profile-img">
+                <div class="profile-info">
+                    <h2>Book Lover</h2>
+                    <p>Member since 2024</p>
+                    <div class="stats-mini">
+                        <span><strong>12</strong> Books</span>
+                        <span><strong>89h</strong> Listened</span>
+                    </div>
+                </div>
+                <button class="edit-btn">
+                    <i class='bx bx-edit'></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- WebDAV Configuration -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-cloud'></i>
+                WebDAV Configuration
+            </h3>
+            <div class="settings-card">
+                <div class="input-group">
+                    <label for="webdav-url">Server URL</label>
+                    <input type="url" id="webdav-url" placeholder="https://webdav.example.com">
+                </div>
+                <div class="input-group">
+                    <label for="webdav-user">Username</label>
+                    <input type="text" id="webdav-user" placeholder="your-username">
+                </div>
+                <div class="input-group">
+                    <label for="webdav-pass">Password</label>
+                    <input type="password" id="webdav-pass" placeholder="••••••••">
+                    <button class="toggle-password">
+                        <i class='bx bx-show'></i>
+                    </button>
+                </div>
+                <div class="input-group">
+                    <label for="webdav-path">Library Path</label>
+                    <input type="text" id="webdav-path" placeholder="/audiobooks">
+                </div>
+                <div class="button-group">
+                    <button class="btn-test">
+                        <i class='bx bx-wifi-2'></i>
+                        Test Connection
+                    </button>
+                    <button class="btn-save">
+                        <i class='bx bx-save'></i>
+                        Save
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playback Settings -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-play-circle'></i>
+                Playback Settings
+            </h3>
+            <div class="settings-card">
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Default Speed</span>
+                        <span class="setting-value">1.0x</span>
+                    </div>
+                    <input type="range" min="0.5" max="3" step="0.25" value="1" class="slider">
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Skip Forward</span>
+                        <span class="setting-value">30s</span>
+                    </div>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="skip-forward" value="10">
+                            <span>10s</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="skip-forward" value="30" checked>
+                            <span>30s</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="skip-forward" value="60">
+                            <span>60s</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <span>Skip Backward</span>
+                        <span class="setting-value">30s</span>
+                    </div>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="skip-back" value="10">
+                            <span>10s</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="skip-back" value="30" checked>
+                            <span>30s</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="skip-back" value="60">
+                            <span>60s</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="toggle-item">
+                    <span>Auto-play next chapter</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                
+                <div class="toggle-item">
+                    <span>Remember playback position</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theme Settings -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-palette'></i>
+                Appearance
+            </h3>
+            <div class="settings-card">
+                <div class="setting-item">
+                    <span class="setting-label">Theme</span>
+                    <div class="theme-options">
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="dark" checked>
+                            <span class="theme-box dark-theme">
+                                <i class='bx bx-moon'></i>
+                                Dark
+                            </span>
+                        </label>
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="light">
+                            <span class="theme-box light-theme">
+                                <i class='bx bx-sun'></i>
+                                Light
+                            </span>
+                        </label>
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="auto">
+                            <span class="theme-box auto-theme">
+                                <i class='bx bx-desktop'></i>
+                                Auto
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="toggle-item">
+                    <span>Show cover animations</span>
+                    <label class="toggle">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sleep Timer -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-moon'></i>
+                Sleep Timer
+            </h3>
+            <div class="settings-card">
+                <div class="timer-options">
+                    <button class="timer-btn">Off</button>
+                    <button class="timer-btn">15 min</button>
+                    <button class="timer-btn">30 min</button>
+                    <button class="timer-btn">45 min</button>
+                    <button class="timer-btn">1 hour</button>
+                    <button class="timer-btn">End of chapter</button>
+                </div>
+                
+                <div class="toggle-item">
+                    <span>Fade out when sleeping</span>
+                    <label class="toggle">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Storage -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-data'></i>
+                Storage & Cache
+            </h3>
+            <div class="settings-card">
+                <div class="storage-info">
+                    <div class="storage-item">
+                        <span>Downloaded Books</span>
+                        <span class="storage-size">1.2 GB</span>
+                    </div>
+                    <div class="storage-item">
+                        <span>Cache</span>
+                        <span class="storage-size">245 MB</span>
+                    </div>
+                    <div class="storage-bar">
+                        <div class="storage-fill" style="width: 35%"></div>
+                    </div>
+                    <p class="storage-text">1.4 GB of 4 GB used</p>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn-secondary">
+                        <i class='bx bx-brush'></i>
+                        Clear Cache
+                    </button>
+                    <button class="btn-danger">
+                        <i class='bx bx-trash'></i>
+                        Delete All
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="settings-section">
+            <h3 class="section-title">
+                <i class='bx bx-info-circle'></i>
+                About
+            </h3>
+            <div class="settings-card">
+                <div class="about-info">
+                    <div class="app-logo">
+                        <i class='bx bx-headphone'></i>
+                        <h2>SIRIN</h2>
+                    </div>
+                    <p class="version">Version 1.0.0</p>
+                    <p class="description">
+                        Your personal audiobook player with WebDAV cloud streaming support.
+                    </p>
+                    <div class="about-links">
+                        <a href="#" class="about-link">
+                            <i class='bx bx-book'></i>
+                            User Guide
+                        </a>
+                        <a href="#" class="about-link">
+                            <i class='bx bx-bug'></i>
+                            Report Bug
+                        </a>
+                        <a href="https://github.com/Greenlionzz/SIRIN" class="about-link">
+                            <i class='bx bxl-github'></i>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Out -->
+        <section class="settings-section">
+            <button class="btn-signout">
+                <i class='bx bx-log-out'></i>
+                Sign Out
+            </button>
+        </section>
+        
+        <!-- Bottom spacing -->
+        <div style="height: 2rem;"></div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,766 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Changa+One:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  background-color: #040834;
+  animation: pageLoad 0.5s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header{
+  padding: 1rem 2rem;
+  background-color: rgba(2, 193, 185, 0.2);
+  border-bottom: 3px solid rgba(161, 2, 193, 0.1);
+  margin-bottom: 1px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+header h2{
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  text-shadow: 0 2px 2px rgba(43, 3, 3, 0.5);
+  color:  rgba(255, 209, 127, 1);
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  gap: 4vw;
+  padding-top: 10px;
+}
+nav li a{
+  text-decoration: none;
+  color: white;
+}
+
+header .seark{
+  display: flex;
+  align-items: center;
+}
+
+.seark input[type="search"] {
+  width: 100%;
+  padding: 5px;
+  background: #B7DCD6;
+  border: 1px solid #DBEABE;
+  border-radius: 5px;
+  color: #253506 ;
+  font-size: 0.95rem;
+}
+
+.profile img{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+main{
+  margin-bottom: 1rem;
+}
+
+main .top{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  padding: 1rem 2rem;
+  color: #fff;
+}
+
+.top h3{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(164, 170, 233, 1);
+}
+
+.top label{
+  padding-left: 20px;
+  color: #DDDF94;
+}
+
+main .top #filter-status {
+  width: 100%;
+  background-color: #C7EFDA;
+  border-radius: 5px;
+}
+
+main .top #sort{
+  width: 100%;
+  background-color: #C7EFDA;
+  border-radius: 5px;
+}
+
+/* 5. STATISTICS SECTION */
+.stats {
+  background: #DDEFC7;
+  border-radius: 5px;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  border: 3px solid #79C721F5;
+}
+
+.stats h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: #0D7E73F5;
+  margin-bottom: 5px;
+  padding-left: 46%;
+  padding-top: 10px;
+  font-size: 1.3rem;
+}
+
+.stats ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.stats li {
+  background: #BC2BAD6E;
+  margin: 0 15px 15px 15px;
+  padding: 4px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid rgba(154, 155, 43, 0.63);
+}
+
+.stats strong {
+  display: block;
+  color: #20036F;
+  font-size: 0.75rem;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+
+/* Fix for current HTML structure */
+.stats li {
+  font-size: 0;
+}
+
+.stats li strong {
+  font-size: 0.75rem;
+}
+
+.stats li {
+  font-size: 1.25rem;
+  color: #012E06;
+  font-weight: 600;
+}
+
+/* CONTINUE LISTENING SECTION */
+.listening {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.section-title {
+  color: #F8EDED;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(164, 170, 233, 1);
+}
+
+/* Container for horizontal scroll on mobile */
+.listening-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* On mobile, make it horizontal scroll */
+@media (max-width: 768px) {
+  .listening-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .listening-container::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .listening-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .listening-container::-webkit-scrollbar-thumb {
+    background: rgba(120, 242, 173, 0.5);
+    border-radius: 2px;
+  }
+}
+
+/* Individual book item */
+.listening-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(120, 242, 173, 0.3);
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  min-width: 300px; /* Minimum width for mobile scroll */
+}
+
+@media (max-width: 768px) {
+  .listening-item {
+    flex: 0 0 85vw; /* Take up 85% of viewport width on mobile */
+    scroll-snap-align: center;
+  }
+}
+
+.listening-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(120, 242, 173, 0.2);
+  background: rgba(120, 242, 173, 0.05);
+}
+
+/* Book cover */
+.listening-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(120, 242, 173, 0.5);
+  flex-shrink: 0;
+}
+
+/* Book details container */
+.book-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Book information */
+.book-info h4 {
+  color: rgba(215, 239, 207, 1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.book-info .author {
+  color: #F0C3C3;
+  font-size: 0.85rem;
+  margin-bottom: 0.1rem;
+}
+
+.book-info .narrator {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Progress bar */
+.progress-bar {
+  margin: 0.75rem 0;
+}
+
+.progress-bar label {
+  color: #D7D085;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.progress-bar progress {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.progress-bar progress::-webkit-progress-bar {
+  background: #C3DBD7;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #700A3D, #A4AAE9);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-bar progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #700A3D, #A4AAE9);
+  border-radius: 5px;
+}
+
+.progress-bar span {
+  color: #F2ABAB;
+  font-size: 0.75rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Play button */
+.play-btn {
+  background: linear-gradient(135deg, rgba(120, 242, 173, 0.8), rgba(164, 170, 233, 0.8));
+  color: #040834;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(120, 242, 173, 0.4);
+  background: linear-gradient(135deg, rgba(120, 242, 173, 1), rgba(164, 170, 233, 1));
+}
+
+.play-btn i {
+  font-size: 1.2rem;
+}
+
+/* Special styling for currently playing */
+.listening-item.now-playing {
+  border-color: rgba(120, 242, 173, 0.8);
+  background: rgba(120, 242, 173, 0.1);
+}
+
+.listening-item.now-playing .play-btn {
+  background: rgba(255, 100, 100, 0.8);
+}
+
+.listening-item.now-playing .play-btn i::before {
+  content: "\ea1d"; /* Pause icon in boxicons */
+}
+/* Add to your existing CSS */
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  nav ul {
+    gap: 2rem;
+  }
+  
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .top select {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Fix select dropdowns width */
+main .top #filter-status,
+main .top #sort {
+  width: auto; /* Changed from 30px */
+  min-width: 120px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* Add hover effects */
+nav li a:hover {
+  color: rgba(255, 209, 127, 1);
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+}
+
+/* Add play button */
+.play-btn {
+  background: #31C07D;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Make search better */
+.seark {
+  position: relative;
+}
+
+.seark i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.seark input {
+  padding-right: 35px;
+}
+
+/* Add icon sizes */
+.bx {
+  font-size: 1.3rem;
+}
+
+.library {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+.library h3 {
+  color: #F8EDED;
+  margin: 1rem 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(164, 170, 233, 1);
+}
+
+/* Book Grid - Responsive */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .book-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* Book Card */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Book Cover Container - IMPORTANT! */
+.book-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* Maintains book ratio */
+  overflow: hidden;
+  border-radius: 5px;
+  border: 2px solid rgba(120, 242, 173, 0.5);
+  background: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+/* Book Cover Image */
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* This is the key! */
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+  transform: scale(1.05);
+}
+
+/* Book Info */
+.book-card h4 {
+  color: #CECAA0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.25rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-card p {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Recent Activity */
+.recent-activity {
+  margin: 2rem 1rem;
+}
+
+.recent-activity h3 {
+  color: #F8EDED;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(164, 170, 233, 1);
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(26, 26, 26, 0.5);
+  border-radius: 8px;
+  border: 1px solid rgba(120, 242, 173, 0.2);
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+  background: rgba(120, 242, 173, 0.05);
+  transform: translateX(5px);
+}
+
+.activity-cover {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-info h4 {
+  color: #CECAA0;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.activity-info p {
+  color: #78F2AD;
+  font-size: 0.8rem;
+}
+
+.activity-info small {
+  color: #a0a0a0;
+  font-size: 0.75rem;
+}
+
+.resume-btn {
+  background: transparent;
+  border: none;
+  color: #78F2AD;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: scale(1.2);
+  color: #A4AAE9;
+}
+
+/* Quick Summary */
+.quick-summary {
+  margin: 2rem 1rem;
+}
+
+.quick-summary h3 {
+  color: #F8EDED;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(164, 170, 233, 1);
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, rgba(120, 242, 173, 0.1), rgba(164, 170, 233, 0.1));
+  border: 1px solid rgba(120, 242, 173, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(120, 242, 173, 0.2);
+}
+
+.summary-card i {
+  font-size: 2rem;
+  color: #78F2AD;
+}
+
+.summary-card strong {
+  display: block;
+  color: #CECAA0;
+  font-size: 1.1rem;
+}
+
+.summary-card small {
+  color: #a0a0a0;
+  font-size: 0.75rem;
+}
+
+/* Mini Player (Shows when audio is playing) */
+.mini-player {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(43, 0, 58, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(120, 242, 173, 0.5);
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 90;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mini-cover {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.mini-info {
+  flex: 1;
+}
+
+.mini-info h4 {
+  color: #CECAA0;
+  font-size: 0.9rem;
+  margin-bottom: 0.1rem;
+}
+
+.mini-info p {
+  color: #a0a0a0;
+  font-size: 0.75rem;
+}
+
+.mini-play,
+.mini-close {
+  background: transparent;
+  border: none;
+  color: #78F2AD;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.mini-close {
+  color: #a0a0a0;
+  font-size: 1.2rem;
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  bottom: 5rem; /* Above mini-player */
+  right: 1.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #78F2AD, #A4AAE9);
+  border: none;
+  color: #040834;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(120, 242, 173, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 89;
+}
+
+.fab:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Add padding at bottom for mini-player */
+body {
+  padding-bottom: 80px; /* Space for mini-player */
+}

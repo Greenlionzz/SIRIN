@@ -1,0 +1,520 @@
+/* PLAYER PAGE STYLES - Matching your color scheme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Your color scheme */
+    --bg-dark: #040834;
+    --bg-secondary: #1A1A2E;
+    --accent-green: rgba(120, 242, 173, 1);
+    --accent-purple: rgba(164, 170, 233, 1);
+    --text-primary: #F8EDED;
+    --text-secondary: #CECAA0;
+    --text-muted: #a0a0a0;
+    --gradient: linear-gradient(135deg, rgba(120, 242, 173, 0.1), rgba(164, 170, 233, 0.1));
+}
+
+body {
+    background: linear-gradient(180deg, #040834 0%, #0A0E3F 100%);
+    color: var(--text-primary);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    animation: pageLoad 0.5s ease-out;
+}
+
+/* HEADER */
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-btn, .menu-btn {
+    background: none;
+    border: none;
+    color: var(--accent-green);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn:hover, .menu-btn:hover {
+    background: rgba(120, 242, 173, 0.1);
+    transform: scale(1.1);
+}
+
+.header-title {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* MAIN CONTAINER */
+.player-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* COVER ART */
+.cover-section {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.cover-wrapper {
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.cover-art {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--accent-green);
+}
+
+@media (max-width: 480px) {
+    .cover-art {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+.cover-shadow {
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    right: 10%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(120, 242, 173, 0.3) 0%, transparent 80%);
+    filter: blur(20px);
+}
+
+/* BOOK INFO */
+.info-section {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.book-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-family: "Quicksand", sans-serif;
+}
+
+.book-author {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.book-narrator {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.book-narrator i {
+    color: var(--accent-purple);
+}
+
+/* CHAPTER INFO */
+.chapter-info {
+    background: var(--gradient);
+    border: 1px solid rgba(120, 242, 173, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chapter-number {
+    color: var(--accent-green);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.chapter-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+/* PROGRESS SECTION */
+.progress-section {
+    margin-bottom: 2rem;
+}
+
+.progress-bar-wrapper {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-purple));
+    border-radius: 3px;
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.progress-handle {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-green);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    cursor: grab;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.progress-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.current-time, .total-time {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* MAIN CONTROLS */
+.controls-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.control-btn i {
+    font-size: 1.8rem;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    color: var(--accent-green);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Play button special styling */
+.play-btn {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-purple));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(120, 242, 173, 0.3);
+}
+
+.play-btn i {
+    font-size: 2rem;
+    color: var(--bg-dark);
+    margin-left: 3px;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(120, 242, 173, 0.5);
+}
+
+.skip-back i, .skip-next i {
+    font-size: 2rem;
+}
+
+.rewind i, .forward i {
+    font-size: 1.5rem;
+}
+
+/* SECONDARY CONTROLS */
+.secondary-controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(26, 26, 26, 0.3);
+    border-radius: 15px;
+}
+
+.secondary-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn i {
+    font-size: 1.3rem;
+}
+
+.secondary-btn span {
+    font-size: 0.75rem;
+}
+
+.secondary-btn:hover,
+.secondary-btn.active {
+    color: var(--accent-green);
+    background: rgba(120, 242, 173, 0.1);
+}
+
+/* CHAPTERS SECTION */
+.chapters-section {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.chapters-toggle {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.chapters-toggle:hover {
+    background: rgba(120, 242, 173, 0.05);
+}
+
+.chapters-toggle i:last-child {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.chapters-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 0 1rem 1rem;
+}
+
+.chapter-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chapter-item:hover {
+    background: rgba(120, 242, 173, 0.05);
+    transform: translateX(5px);
+}
+
+.chapter-item.active {
+    background: var(--gradient);
+    border: 1px solid rgba(120, 242, 173, 0.3);
+}
+
+.chapter-num {
+    width: 30px;
+    height: 30px;
+    background: rgba(164, 170, 233, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+}
+
+.chapter-item.active .chapter-num {
+    background: var(--accent-green);
+    color: var(--bg-dark);
+}
+
+.chapter-details {
+    flex: 1;
+}
+
+.chapter-details h4 {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.chapter-duration {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.chapter-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-green) 60%, transparent 60%);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Custom Scrollbar for chapters */
+.chapters-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chapters-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.chapters-list::-webkit-scrollbar-thumb {
+    background: var(--accent-purple);
+    border-radius: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .player-container {
+        padding: 0.5rem;
+    }
+    
+    .book-title {
+        font-size: 1.5rem;
+    }
+    
+    .controls-section {
+        gap: 1rem;
+    }
+    
+    .play-btn {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .secondary-controls {
+        padding: 0.75rem;
+    }
+    
+    .secondary-btn span {
+        font-size: 0.7rem;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cover-section,
+.info-section,
+.chapter-info,
+.progress-section,
+.controls-section,
+.secondary-controls,
+.chapters-section {
+    animation: slideUp 0.6s ease-out backwards;
+}
+
+.info-section { animation-delay: 0.1s; }
+.chapter-info { animation-delay: 0.2s; }
+.progress-section { animation-delay: 0.3s; }
+.controls-section { animation-delay: 0.4s; }
+.secondary-controls { animation-delay: 0.5s; }
+.chapters-section { animation-delay: 0.6s; }

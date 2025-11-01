@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing - Sirin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/player.css">
+</head>
+<body>
+    <!-- Player Header -->
+    <header class="player-header">
+        <a href="index.html" class="back-btn">
+            <i class='bx bx-chevron-left'></i>
+        </a>
+        <span class="header-title">Now Playing</span>
+        <button class="menu-btn">
+            <i class='bx bx-dots-vertical-rounded'></i>
+        </button>
+    </header>
+
+    <!-- Main Player Container -->
+    <main class="player-container">
+        <!-- Cover Art Section -->
+        <section class="cover-section">
+            <div class="cover-wrapper">
+                <img src="https://m.media-amazon.com/images/I/81nf4hW0A8L._SL1500_.jpg" 
+                     alt="Ikigai" class="cover-art">
+                <div class="cover-shadow"></div>
+            </div>
+        </section>
+
+        <!-- Book Info -->
+        <section class="info-section">
+            <h1 class="book-title">Ikigai</h1>
+            <p class="book-author">Héctor García & Francesc Miralles</p>
+            <p class="book-narrator">
+                <i class='bx bx-microphone'></i>
+                Tetsuya Mizuta
+            </p>
+        </section>
+
+        <!-- Chapter Info -->
+        <section class="chapter-info">
+            <span class="chapter-number">Chapter 3 of 12</span>
+            <span class="chapter-title">The Secret to Long Life</span>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <div class="progress-bar-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                    <div class="progress-handle"></div>
+                </div>
+            </div>
+            <div class="time-info">
+                <span class="current-time">1:45:30</span>
+                <span class="total-time">5:35:00</span>
+            </div>
+        </section>
+
+        <!-- Main Controls -->
+        <section class="controls-section">
+            <button class="control-btn skip-back">
+                <i class='bx bx-skip-previous'></i>
+            </button>
+            
+            <button class="control-btn rewind">
+                <i class='bx bx-replay-30'></i>
+            </button>
+            
+            <button class="control-btn play-btn">
+                <i class='bx bx-play'></i>
+            </button>
+            
+            <button class="control-btn forward">
+                <i class='bx bx-forward-30'></i>
+            </button>
+            
+            <button class="control-btn skip-next">
+                <i class='bx bx-skip-next'></i>
+            </button>
+        </section>
+
+        <!-- Secondary Controls -->
+        <section class="secondary-controls">
+            <button class="secondary-btn active">
+                <i class='bx bx-volume-full'></i>
+                <span>Volume</span>
+            </button>
+            
+            <button class="secondary-btn">
+                <i class='bx bx-tachometer'></i>
+                <span>1.0x</span>
+            </button>
+            
+            <button class="secondary-btn">
+                <i class='bx bx-moon'></i>
+                <span>Sleep</span>
+            </button>
+            
+            <button class="secondary-btn">
+                <i class='bx bx-bookmark'></i>
+                <span>Mark</span>
+            </button>
+        </section>
+
+        <!-- Chapters List (Collapsible) -->
+        <section class="chapters-section">
+            <button class="chapters-toggle">
+                <i class='bx bx-list-ul'></i>
+                <span>Chapters</span>
+                <i class='bx bx-chevron-up'></i>
+            </button>
+            
+            <div class="chapters-list">
+                <div class="chapter-item">
+                    <span class="chapter-num">1</span>
+                    <div class="chapter-details">
+                        <h4>Introduction: The Mystery</h4>
+                        <span class="chapter-duration">25:30</span>
+                    </div>
+                </div>
+                
+                <div class="chapter-item">
+                    <span class="chapter-num">2</span>
+                    <div class="chapter-details">
+                        <h4>Finding Your Purpose</h4>
+                        <span class="chapter-duration">35:45</span>
+                    </div>
+                </div>
+                
+                <div class="chapter-item active">
+                    <span class="chapter-num">3</span>
+                    <div class="chapter-details">
+                        <h4>The Secret to Long Life</h4>
+                        <span class="chapter-duration">28:15</span>
+                    </div>
+                    <div class="chapter-progress"></div>
+                </div>
+                
+                <div class="chapter-item">
+                    <span class="chapter-num">4</span>
+                    <div class="chapter-details">
+                        <h4>Flow and Enjoyment</h4>
+                        <span class="chapter-duration">32:10</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

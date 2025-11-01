@@ -1,0 +1,202 @@
+<!-- Your HTML has some misplaced tags at the end, here's the corrected version -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sirin - Audiobook Player</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h2>SIRIN</h2>
+    </div>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class='bx bx-home'></i></a></li>
+          <li><a href="search.html"><i class='bx bx-search-alt'></i></a></li>
+          <li><a href="discover.html"><i class='bx bx-library'></i></a></li>
+          <li><a href="settings.html"><i class='bx bx-cog'></i></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="seark"> <!-- Consider renaming to "search" -->
+      <input type="search" name="search" id="search" placeholder="Search books..." />
+      <i class='bx bx-search'></i>
+    </div>
+    <div class="profile">
+      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%2Fid%2FOIP.hGSCbXlcOjL_9mmzerqAbQHaHa%3Fpid%3DApi&f=1&ipt=8854e8782b9540b124010dc64675e82a53242ad6011c22004b683ecd0b89035b&ipo=images" alt="profile" />
+    </div>
+  </header>
+
+  <main>
+    <div class="top">
+      <label for="filter-status">Filter:</label>
+      <select name="filter-status" id="filter-status">
+        <option value="all">All</option>
+        <option value="listening">Currently Listening</option>
+        <option value="completed">Completed</option>
+        <option value="not-started">Not Started</option>
+      </select>
+      <label for="sort">Sort by:</label>
+      <select id="sort" name="sort">
+        <option value="recent">Recently Added</option>
+        <option value="title">Title (A-Z)</option>
+        <option value="author">Author (A-Z)</option>
+        <option value="progress">Progress</option>
+      </select>
+    </div>
+
+    <section class="listening">
+  <h3 class="section-title">Continue Listening</h3>
+  <div class="listening-container">
+    <article class="listening-item">
+      <img src="https://m.media-amazon.com/images/I/81nf4hW0A8L._SL1500_.jpg" alt="Ikigai book cover" />
+      <div class="book-details">
+        <div class="book-info">
+          <h4>Ikigai</h4>
+          <p class="author">By: Héctor García and Francesc Miralles</p>
+          <p class="narrator">Narrated by: Tetsuya Mizuta</p>
+        </div>
+        <div class="progress-bar">
+          <label for="progress-ikigai">Progress:</label>
+          <progress id="progress-ikigai" value="45" max="100">45%</progress>
+          <span>45% (2h 30m / 5h 35m)</span>
+        </div>
+        <button class="play-btn"><i class='bx bx-play'></i> Continue</button>
+      </div>
+    </article>
+    
+    <article class="listening-item">
+      <img src="https://m.media-amazon.com/images/I/81wvR09gLRL._SL1500_.jpg" alt="Project Hail Mary book cover" />
+      <div class="book-details">
+        <div class="book-info">
+          <h4>Project Hail Mary</h4>
+          <p class="author">By: Andy Weir</p>
+          <p class="narrator">Narrated by: Ray Porter</p>
+        </div>
+        <div class="progress-bar">
+          <label for="progress-hailmary">Progress:</label>
+          <progress id="progress-hailmary" value="24" max="100">24%</progress>
+          <span>24% (1h 12m / 5h)</span>
+        </div>
+        <button class="play-btn"><i class='bx bx-play'></i> Continue</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+    <section class="stats">
+      <h3>Your Stats</h3>
+      <ul>
+        <li><strong>Total Books:</strong> 12</li>
+        <li><strong>Completed:</strong> 5</li>
+        <li><strong>In Progress:</strong> 3</li>
+        <li><strong>Total Hours:</strong> 89h 30m</li>
+        <li><strong>This Month:</strong> 8h 15m</li>
+      </ul>
+    </section>
+    <!-- Add after stats section -->
+    <section class="library">
+  <h3>Library</h3>
+  <div class="book-grid">
+    <article class="book-card" onclick="location.href='player.html'" style="cursor: pointer;">
+      <div class="book-cover">
+        <img src="https://m.media-amazon.com/images/I/91Ccq18dSuL._SX425_.jpg" alt="The Alchemist cover">
+      </div>
+      <h4>The Alchemist</h4>
+      <p>Paulo Coelho</p>
+    </article>
+    
+    <article class="book-card">
+      <div class="book-cover" onclick="location.href='player.html'" style="cursor: pointer;">
+        <img src="https://m.media-amazon.com/images/I/81iss3ldpLL._SL1500_.jpg" alt="Atomic Habits cover">
+      </div>
+      <h4>Atomic Habits</h4>
+      <p>James Clear</p>
+    </article>
+    
+    <article class="book-card">
+      <div class="book-cover" onclick="location.href='player.html'" style="cursor: pointer;">
+        <img src="https://m.media-amazon.com/images/I/91gkIoxjLIL._SL1500_.jpg" alt="Iron Flame cover">
+      </div>
+      <h4>Iron Flame</h4>
+      <p>Rebecca Yarros</p>
+    </article>
+    
+    <article class="book-card">
+      <div class="book-cover" onclick="location.href='player.html'" style="cursor: pointer;">
+        <img src="https://m.media-amazon.com/images/I/91oy2IMFIIL._SL1500_.jpg" alt="Where The Crawdads Sing cover">
+      </div>
+      <h4>Where the Crawdads Sing</h4>
+      <p>Delia Owens</p>
+    </article>
+    <article class="book-card">
+      <div class="book-cover" onclick="location.href='player.html'" style="cursor: pointer;">
+        <img src="https://m.media-amazon.com/images/I/91W7DUccKAL._SL1500_.jpg" alt="The Last Green Valley cover">
+      </div>
+      <h4>The Last Green Valley</h4>
+      <p>Mark Sullivan</p>
+    </article>
+    <article class="book-card" onclick="location.href='player.html'" style="cursor: pointer;">
+      <div class="book-cover">
+        <img src="https://m.media-amazon.com/images/I/81bGrh+tiqL._SL1500_.jpg" alt="Lincoln in the Bardo cover">
+      </div>
+      <h4>Lincoln in the Bardo</h4>
+      <p>George Saunders</p>
+    </article>
+  </div>
+</section>
+<section class="recent-activity">
+  <h3>Recent Activity</h3>
+  <div class="activity-list">
+    <div class="activity-item">
+      <img src="https://m.media-amazon.com/images/I/91Ccq18dSuL._SX425_.jpg" alt="Book" class="activity-cover">
+      <div class="activity-info">
+        <h4>The Alchemist</h4>
+        <p>Listened 2 hours ago</p>
+        <small>Chapter 5 • 32:15</small>
+      </div>
+      <button class="resume-btn">
+        <i class='bx bx-play-circle'></i>
+      </button>
+    </div>
+    
+    <div class="activity-item">
+      <img src="https://m.media-amazon.com/images/I/81iss3ldpLL._SL1500_.jpg" alt="Book" class="activity-cover">
+      <div class="activity-info">
+        <h4>Atomic Habits</h4>
+        <p>Yesterday</p>
+        <small>Chapter 3 • 18:45</small>
+      </div>
+      <button class="resume-btn">
+        <i class='bx bx-play-circle'></i>
+      </button>
+    </div>
+  </div>
+</section>
+  <!-- If something is playing, show this -->
+<div class="mini-player">
+  <img src="https://m.media-amazon.com/images/I/81nf4hW0A8L._SL1500_.jpg" alt="Current" class="mini-cover">
+  <div class="mini-info">
+    <h4>Ikigai</h4>
+    <p>Chapter 4</p>
+  </div>
+  <button class="mini-play">
+    <i class='bx bx-pause'></i>
+  </button>
+  <button class="mini-close">
+    <i class='bx bx-x'></i>
+  </button>
+  <button class="fab" onclick="location.href='add-book.html'">
+  <i class='bx bx-plus'></i>
+</button>
+</div>
+</section>
+  </main>
+</body>
+</html>
